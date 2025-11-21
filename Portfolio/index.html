@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Grace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    #main-header.scrolled nav a:hover {
+      background-color: transparent !important;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+    li{
+      list-style: disc;
+      list-style-position: inside;
+    }
+    @layer utilities {
+      .bg-gradient-bubble {
+        background: linear-gradient(45deg, #384B70, #507687, #FCFAEE);
+        clip-path: ellipse(70% 50% at 50% 50%);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .bubble {
+        position: absolute;
+        border-radius: 50%;
+        animation: move-bubble 10s infinite ease-in-out;
+        mix-blend-mode: multiply;  /* Mencampur efek bubble dengan background */
+      }
+
+      @keyframes move-bubble {
+        0% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(30px, 30px) rotate(45deg);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      .bubble:nth-child(1) {
+        clip-path: ellipse(75% 55% at 50% 40%);
+        width: 60px;
+        height: 70px;
+        top: 20px;
+        left: 20px;
+      }
+      .bubble:nth-child(2) {
+        clip-path: ellipse(80% 50% at 45% 50%);
+        width: 90px;
+        height: 85px;
+        top: 50px;
+        left: 120px;
+      }
+      .bubble:nth-child(3) {
+        clip-path: ellipse(60% 70% at 50% 50%);
+        width: 80px;
+        height: 90px;
+        top: 150px;
+        left: 200px;
+      }
+      .bubble:nth-child(4) {
+        clip-path: ellipse(80% 60% at 55% 45%);
+        width: 70px;
+        height: 80px;
+        top: 100px;
+        left: 300px;
+      }
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 scroll-smooth">
+
+<!-- <header id="main-header" class="py-5 fixed top-0 w-full transition-all duration-300 z-50">
+  <div class="container mx-auto flex items-center justify-between px-6">
+    <h1 class="text-lg font-semibold text-gray-900">MyPortfolio</h1>
+
+    <nav id="nav" class="flex items-center space-x-10">
+      <a href="#about" class="text-[#5A2020] hover:bg-white hover:shadow-md hover:scale-105 px-4 py-1 rounded transition duration-300 ease-in-out inline-block">About</a>
+      <a href="#project" class="text-[#5A2020] hover:bg-white hover:shadow-md hover:scale-105 px-4 py-1 rounded transition duration-300 ease-in-out inline-block">Project</a>
+      <a href="#timeline" class="text-[#5A2020] hover:bg-white hover:shadow-md hover:scale-105 px-4 py-1 rounded transition duration-300 ease-in-out inline-block">Timeline</a>
+      <a href="#contact" class="text-[#5A2020] hover:bg-white hover:shadow-md hover:scale-105 px-4 py-1 rounded transition duration-300 ease-in-out inline-block">Contact</a>
+    </nav>
+  </div>
+</header> -->
+
+  <!-- Hero Section -->
+  <section class="h-screen flex items-center justify-center bg-gradient-to-r" style="background: linear-gradient(145deg, #384B70 0%, #507687 50%, #FCFAEE 100%);">
+    <div class="w-full flex items-center">
+      <div data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine" class="w-1/2 pl-16">
+        <h1 class="text-5xl font-semibold mb-4 text-[#FCFAEE]">Hi there, Grace is here</h1>
+        <p class="text-lg text-white mb-8">Front-end Engineer | UI/UX | Remote & Freelance Ready</p>
+        <!-- <div class="flex items-center rounded-sm text-black py-2 rounded-sm w-full mt-4"> -->
+          <button class="bg-[#052943] text-[#FCFAEE] rounded-full whitespace-nowrap py-3 px-6 mr-2">Download CV</button>
+          <!-- <a href="https://wa.me/082160171946?text=Hi%20there,%20I%20wanted%20to%20reach%20out!" target="_blank">
+            <button class="bg-transparent border border-[#507687] text-[#FCFAEE] rounded-full whitespace-nowrap py-2 px-6 ml-2">
+              Contact Me
+            </button>
+          </a> -->
+        <!-- </div> -->
+      </div>
+      <div data-aos="fade-left" data-aos-duration="1000" data-aos-easing="ease-in-sine" class="w-1/2">
+        <h2 class="text-3xl mb-10 text-[#FCFAEE] text-center  animate__animated animate__fadeIn">Table of Contents</h2>
+        <ul class="flex-column text-center items-center justify-center">
+          <li class="list-none">
+            <a href="#about" class="text-base text-[#FCFAEE] hover:bg-[#507687] hover:shadow-md hover:scale-105 px-6 py-2 mb-8 rounded-full transition duration-300 ease-in-out inline-block">About</a>
+          </li>
+          <li class="list-none">
+            <a href="#timeline" class="text-base text-[#FCFAEE] hover:bg-[#507687] hover:shadow-md hover:scale-105 px-6 py-2 mb-8 rounded-full transition duration-300 ease-in-out inline-block">Timeline</a>
+          </li>
+          <li class="list-none">
+            <a href="#project" class="text-base text-[#FCFAEE] hover:bg-[#507687] hover:shadow-md hover:scale-105 px-6 py-2 mb-8 rounded-full transition duration-300 ease-in-out inline-block">Showcase</a>
+          </li>
+          <li class="list-none">
+            <a href="#contact" class="text-base text-[#FCFAEE] hover:bg-[#507687] hover:shadow-md hover:scale-105 px-6 py-2 mb-8 rounded-full transition duration-300 ease-in-out inline-block">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="relative z-10">
+    <div class="relative w-full h-screen overflow-hidden">
+      <div class="absolute top-[8%] left-[5%] w-64 h-48 opacity-60">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <defs>
+            <linearGradient id="bg-grad1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#384B70" />
+              <stop offset="50%" stop-color="#507687" />
+              <stop offset="100%" stop-color="#FCFAEE" />
+            </linearGradient>
+          </defs>
+          <path d="M55,110 C45,70 80,40 140,50 C190,60 220,50 240,80 C260,110 250,140 210,150 C160,160 120,165 85,150 C60,140 55,130 55,110Z" fill="url(#bg-grad1)" stroke="#384B70" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="absolute top-[60%] left-[15%] w-72 h-52 opacity-50 rotate-[15deg]">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <defs>
+            <linearGradient id="bg-grad2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#507687" />
+              <stop offset="100%" stop-color="#FCFAEE" />
+            </linearGradient>
+          </defs>
+          <path d="M60,100 C50,60 100,30 160,40 C200,45 230,70 240,100 C250,130 220,160 170,165 C120,170 70,140 60,100Z" fill="url(#bg-grad2)" stroke="#384B70" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="absolute top-[15%] right-[10%] w-80 h-56 opacity-70 rotate-[-10deg]">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <defs>
+            <linearGradient id="bg-grad3" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#384B70" />
+              <stop offset="60%" stop-color="#507687" />
+              <stop offset="100%" stop-color="#FCFAEE" />
+            </linearGradient>
+          </defs>
+          <path d="M50,120 C35,75 90,30 160,45 C200,55 230,80 240,115 C250,145 220,170 170,165 C120,160 70,150 50,120Z" fill="url(#bg-grad3)" stroke="#384B70" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="absolute bottom-[20%] right-[5%] w-64 h-48 opacity-60 rotate-[25deg]">
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <defs>
+            <linearGradient id="bg-grad4" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#507687" />
+              <stop offset="80%" stop-color="#FCFAEE" />
+            </linearGradient>
+          </defs>
+          <path d="M70,120 C60,60 110,35 170,50 C210,60 230,90 235,120 C240,150 200,170 140,165 C100,160 75,145 70,120Z" fill="url(#bg-grad4)" stroke="#384B70" stroke-width="2"/>
+        </svg>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="2000" class="relative z-10 flex flex-col items-center justify-center h-full text-[#384B70]">
+        <h2 class="text-4xl font-bold text-center mb-4">About Me</h2>
+        <!-- <button class="bg-[#052943] text-[#FCFAEE] rounded-full whitespace-nowrap py-2 px-6 flex mx-auto">Learn More</button> -->
+        <div class="max-w-4xl mx-auto">
+          <!-- <p class="text-xl font-bold text-center italic mb-4"> I create websites that feel right, no matter the device and anyone can use</p> -->
+          <p class="text-base font-normal text-center leading-relaxed">
+            I’m a front-end engineer with about five years of experience, mostly spent in the startup world where I got my hands dirty building and maintaining real products — not just quick prototypes.
+            Lately, I’ve been working in the public sector, which has given me a whole new perspective on creating accessible and scalable solutions for all kinds of users.
+            I care a lot about clean, maintainable code and love turning design ideas into responsive, user-friendly interfaces.
+            Accessibility, performance, and thoughtful UX are big priorities for me, and I’m always trying to bridge that gap between design and development.
+            Right now, I’m looking for remote opportunities where I can help build meaningful digital experiences with a collaborative, forward-thinking team.
+            Outside of work, I like keeping up with front-end trends, watching design breakdowns, gaming a bit, and spending time with my family.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section data-aos="fade-up" data-aos-duration="1500" id="timeline" class="py-20 px-4 bg-white text-[#384B70]">
+  <!-- <section id="timeline" class="h-screen flex items-center justify-center py-20 px-4 bg-gradient-to-r" style="background: linear-gradient(145deg, #384B70 0%, #507687 50%, #FCFAEE 100%);"></section> -->
+    <h2 class="text-4xl font-bold text-center mb-8">Timeline</h2>
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-[1fr,40px,4fr] relative">
+        <div class="text-right pr-4">Education</div>
+        <div class="relative flex justify-center items-start h-full">
+          <div class="absolute top-0 bottom-0 w-px bg-blue-500"></div>
+          <div class="w-4 h-4 rounded-full bg-gray-600 z-10"></div>
+        </div>
+        <div class="text-left pl-4 mb-4">
+          <span>Institut Teknologi Del</span>
+          <p>September 2015 - 2018 | Computer Science</p>
+        </div>
+        <div class="text-right pr-4">Experience</div>
+        <div class="relative flex justify-center items-start h-full">
+          <div class="absolute top-0 bottom-0 w-px bg-blue-500"></div>
+          <div class="w-4 h-4 rounded-full bg-gray-600 z-10"></div>
+        </div>
+        <div class="text-left pl-4 mb-4">
+          <span>JTenun Project</span>
+          <p>June - Aug 2018 | Internship Developer</p>
+          <ul>
+            <li>Designed wireframe and developed user interface (UI) for JTenun mobile application using Android Studio and XML layout system.</li>
+            <li>Implemented responsive UI components aligned with design guidelines to ensure smooth user experience across various devices.</li>
+            <li>Performed manual testing to identify and fix UI/UX bugs during beta phase.</li>
+            <li>Conducted user training sessions and directly interacted with target users to gather feedback and guide them through the beta version of the app.</li>
+          </ul>
+        </div>
+        <div class="text-right pr-4"></div>
+        <div class="relative flex justify-center items-start h-full">
+          <div class="absolute top-0 bottom-0 w-px bg-blue-500"></div>
+          <div class="w-4 h-4 rounded-full bg-gray-600 z-10"></div>
+        </div>
+        <div class="text-left pl-4 mb-4">
+          <span>Laboratory Educational Games SBM ITB</span>
+          <p>March - November 2019 | Developer</p>
+          <ul>
+            <li>Learned how an existing board game worked so I could help bring it into an AR version.</li>
+            <li>Helped integrate the game into an AR experience using Unity and Java.</li>
+            <li>Created 3D models and animations using Blender for the game’s assets.</li>
+            <li>Improved the game based on feedback from users during testing sessions.</li>
+            <li>Helped run game sessions with clients by being a co-host and explaining how the game works.</li>
+          </ul>
+        </div>
+        <div class="text-right pr-4">Non-formal Education</div>
+        <div class="relative flex justify-center items-start h-full">
+          <div class="absolute top-0 bottom-0 w-px bg-blue-500"></div>
+          <div class="w-4 h-4 rounded-full bg-gray-600 z-10"></div>
+        </div>
+        <div class="text-left pl-4 mb-4">
+          <span>Purwadhika Startup & Coding School</span>
+          <p>November 2019 - March 2020 | UI/UX Job Connector Program</p>
+          <ul>
+            <li>Learned the basics of UI/UX, including design thinking, user research, and how to design interfaces from scratch.</li>
+            <li>Took part in weekly design challenges to practice and improve my skills.</li>
+            <li>Completed 3 major projects, all reviewed by experienced mentors.</li>
+            <li>Shared my work and progress by publishing my portfolio on Medium and Behance.</li>
+          </ul>
+        </div>
+
+        <div class="text-right pr-4">Experience</div>
+        <div class="relative flex justify-center items-start h-full">
+          <div class="absolute top-0 bottom-0 w-px bg-blue-500"></div>
+          <div class="w-4 h-4 rounded-full bg-gray-600 z-10"></div>
+        </div>
+        <div class="text-left pl-4 mb-4">
+          <span>PT Cashtree for Indonesia</span>
+          <p>September 2020 - November 2024 | Front End Engineer</p>
+          <ul>
+            <li>Converted design mockups into responsive and interactive web pages using HTML, CSS/SCSS/Tailwind, and JavaScript.</li>
+            <li>Built and maintained dynamic user interfaces using Vue.js and React.js.</li>
+            <li>Integrated APIs from the backend and handled asynchronous data flow.</li>
+            <li>Debugged issues, and optimized websites for performance, scalability, and maintainability.</li>
+          </ul>
+        </div>
+
+        <div class="text-right pr-4"></div>
+        <div class="relative flex justify-center items-start h-full">
+          <div class="absolute top-0 bottom-0 w-px bg-blue-500"></div>
+          <div class="w-4 h-4 rounded-full bg-gray-600 z-10"></div>
+        </div>
+        <div class="text-left pl-4 mb-4">
+          <span>PT GoVirtual for Indonesia</span>
+          <p>December 2024 - May 2025 | Front End Engineer</p>
+          <ul>
+            <li>Built and customized interactive 360° virtual tour websites using 3DVista for clients in education, real estate, and tourism.</li>
+            <li>Added AI chatbots to the tours using React and third-party tools to make them more interactive.</li>
+            <li>Embedded multimedia like videos, audio, maps, and hotspot navigation to create smooth, engaging experiences.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="project" class="relative py-16 px-4 bg-[#FCFAEE]">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-[#384B70] mb-6 text-center">Showcase</h2>
+      <div id="slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-4 no-scrollbar">
+        <div class="min-w-[300px] max-w-[320px] snap-start bg-white rounded-2xl shadow-md flex-shrink-0 overflow-hidden
+                    hover:scale-[1.03] hover:shadow-2xl transition-transform duration-300 flex flex-col h-full">
+          <img src="img/web-cashtree.png" alt="" class="w-full h-48 object-cover">
+          <div class="flex flex-col flex-grow p-5">
+            <h3 class="text-xl font-semibold text-[#384B70] mb-2">Cashtree</h3>
+            <p class="text-[#507687] text-sm leading-relaxed flex-grow">
+              Cashtree is an profile company website designed to promote the product which focuses on digital advertising. By offering engaging content and rewarding experiences, the platform empowers brands to reach their target audiences effectively, providing users with personalized interactions while driving customer engagement, loyalty, and increased brand awareness through its unique mobile solutions.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">HTML</span>
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">Tailwind</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">JS</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Jquery</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="min-w-[300px] max-w-[320px] snap-start bg-white rounded-2xl shadow-md flex-shrink-0 overflow-hidden 
+                    hover:scale-[1.03] hover:shadow-2xl transition-transform duration-300 flex flex-col h-full">
+          <img src="img/web-hotdeal.png" alt="" class="w-full h-48 object-cover">
+          <div class="flex flex-col flex-grow p-5">
+            <h3 class="text-xl font-semibold text-[#384B70] mb-2">Hotdeal</h3>
+            <p class="text-[#507687] text-sm leading-relaxed flex-grow">
+              Hotdeal is a video-based e-commerce platform designed to enhance the online shopping experience through the power of product videos. By showcasing a wide array of products, particularly from Korea, the platform helps customers make more informed purchase decisions while building trust and increasing engagement, creating a more interactive and personalized shopping environment for users.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">HTML</span>
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">Tailwind</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Vue</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Vuex</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Axios</span>
+            </div>
+          </div>
+        </div>
+        <div class="min-w-[300px] max-w-[320px] snap-start bg-white rounded-2xl shadow-md flex-shrink-0 overflow-hidden 
+                    hover:scale-[1.03] hover:shadow-2xl transition-transform duration-300 flex flex-col h-full">
+          <img src="img/web-lagsan.png" alt="" class="w-full h-48 object-cover">
+          <div class="flex flex-col flex-grow p-5">
+            <h3 class="text-xl font-semibold text-[#384B70] mb-2">Lagsan</h3>
+            <p class="text-[#507687] text-sm leading-relaxed flex-grow">
+              Lagsan is a dedicated online platform where users can write, read, and discuss articles across various subjects, fostering a collaborative environment for knowledge sharing and intellectual exchange. Whether for professional writers or casual readers, Lagsan serves as a space for creative expression and insightful dialogue, bringing together a community passionate about continuous learning and content creation.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">HTML</span>
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">Tailwind</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Vue</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Vuex</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Axios</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="min-w-[300px] max-w-[320px] snap-start bg-white rounded-2xl shadow-md flex-shrink-0 overflow-hidden 
+                    hover:scale-[1.03] hover:shadow-2xl transition-transform duration-300 flex flex-col h-full">
+          <img src="img/web-prokon.png" alt="" class="w-full h-48 object-cover">
+          <div class="flex flex-col flex-grow p-5">
+            <h3 class="text-xl font-semibold text-[#384B70] mb-2">Prokonstruksi</h3>
+            <p class="text-[#507687] text-sm leading-relaxed flex-grow">
+              Prokonstruksi is a online platform providing premium construction solutions, specializing in the distribution of high-quality materials. In addition, the platform offers expert construction and renovation services, ensuring reliable, efficient, and top-tier results for both residential and commercial projects, backed by years of experience in the industry.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">HTML</span>
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">Tailwind</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Vue</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Vuex</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Axios</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="min-w-[300px] max-w-[320px] snap-start bg-white rounded-2xl shadow-md flex-shrink-0 overflow-hidden 
+                    hover:scale-[1.03] hover:shadow-2xl transition-transform duration-300 flex flex-col h-full">
+          <img src="img/web-sfi.png" alt="" class="w-full h-48 object-cover">
+          <div class="flex flex-col flex-grow p-5">
+            <h3 class="text-xl font-semibold text-[#384B70] mb-2">SFI</h3>
+            <p class="text-[#507687] text-sm leading-relaxed flex-grow">
+              SFI is a robust e-commerce website that offers a diverse range of high-quality electronic products, serving both individual consumers and suppliers. Acting as an official distributor, the platform ensures reliable access to advanced technology and electronic equipment, simplifying the procurement process for businesses while catering to personal electronics needs with a user-friendly interface and comprehensive product offerings.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">HTML</span>
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">Tailwind</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Vue</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Vuex</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Axios</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="min-w-[300px] max-w-[320px] snap-start bg-white rounded-2xl shadow-md flex-shrink-0 overflow-hidden 
+                    hover:scale-[1.03] hover:shadow-2xl transition-transform duration-300 flex flex-col h-full">
+          <img src="img/web-up.png" alt="" class="w-full h-48 object-cover">
+          <div class="flex flex-col flex-grow p-5">
+            <h3 class="text-xl font-semibold text-[#384B70] mb-2">Universitas Pancasila Faculty of Law</h3>
+            <p class="text-[#507687] text-sm leading-relaxed flex-grow">
+              The Faculty of Law, Universitas Pancasila website is a comprehensive academic platform designed to streamline student management, offering features like document uploads, class schedules, credit tracking, and assignment deadline reminders. This integrated system helps students efficiently manage their academic responsibilities, ensuring they stay organized and on track throughout their university journey.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">HTML</span>
+              <span class="bg-[#384B70]/10 text-[#384B70] text-xs font-medium px-2.5 py-1 rounded-full">Tailwind</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Vue</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Vuex</span>
+              <span class="bg-[#507687]/10 text-[#507687] text-xs font-medium px-2.5 py-1 rounded-full">Axios</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button id="leftBtn"
+        class="absolute top-1/2 left-8 transform -translate-y-1/2 bg-[#384B70] text-[#FCFAEE] p-3 rounded-full shadow-lg hover:bg-[#507687] transition hidden">
+        &rsaquo;
+      </button>
+      <button id="rightBtn"
+        class="absolute top-1/2 right-8 transform -translate-y-1/2 bg-[#384B70] text-[#FCFAEE] p-3 rounded-full shadow-lg hover:bg-[#507687] transition">
+        &rsaquo;
+      </button>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-4 bg-gray-200">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-semibold mb-4 text-[#384B70]">Let’s deploy something great — together.</h2>
+      <div class="flex items-center justify-center mx-auto max-w-2xl">
+        <img width="20" class="mr-2" src="img/mail.png">
+        <p>gracenaomi.damanik@email.com</p>
+        <span class="w-[2px] h-[16px] bg-black mx-3"></span>
+        <img width="20" class="mr-2" src="img/phone.png">
+        <span>+62 821 6017 1946</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-white text-center text-sm">
+    &copy; 2025 Grace Naomi Damanik. All rights reserved.
+  </footer>
+
+  <script>
+    const header = document.getElementById('main-header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add(
+          'bg-white',
+          'scrolled',
+          'bg-red',
+          'shadow-md',
+          'border-b',
+          'border-gray-200'
+        );
+      } else {
+        header.classList.remove(
+          'bg-white',
+          'scrolled',
+          'bg-white',
+          'shadow-md',
+          'border-b',
+          'border-gray-200'
+        );
+      }
+    });
+
+  const slider = document.getElementById('slider');
+  const leftBtn = document.getElementById('leftBtn');
+  const rightBtn = document.getElementById('rightBtn');
+
+  const scrollAmount = 320; 
+
+  rightBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    updateButtons();
+  });
+
+  leftBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    updateButtons();
+  });
+
+  // Periksa posisi scroll → ubah visibilitas tombol
+  slider.addEventListener('scroll', updateButtons);
+
+  function updateButtons() {
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    const current = slider.scrollLeft;
+
+    leftBtn.classList.toggle('hidden', current <= 0);
+    rightBtn.classList.toggle('hidden', current >= maxScroll - 5);
+  }
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+<script>
+  window.onload = function() {
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
